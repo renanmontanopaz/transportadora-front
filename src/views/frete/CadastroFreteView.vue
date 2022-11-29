@@ -58,7 +58,7 @@
           <button class="button is-success">Cadastrar</button>
         </div>
         <div class="control">
-          <button class="button is-link is-light">Cancelar</button>
+          <button class="button is-link is-light"><router-link to="/frete">Voltar</router-link></button>
         </div>
       </div>
     </div>
