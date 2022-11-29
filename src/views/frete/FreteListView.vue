@@ -8,181 +8,71 @@
 
       </div>
       <div class="column">
-        <button class="button is-success">Cadastrar</button>
+        <router-link to="/cadastrar-frete"><button class="button is-success">Cadastrar Frete</button></router-link>
       </div>
     </nav>
 
-    <div class="is-align-content-center">
+    <div class="tabela">
       <table class="table is-bordered">
         <thead>
         <tr class="is-selected">
-          <th><abbr title="Position">Data</abbr></th>
+          <th>Data</th>
           <th>Status do Frete</th>
-          <th><abbr title="Played">Cidade de Origem</abbr></th>
-          <th><abbr title="Won">Cidade de Destino</abbr></th>
-          <th><abbr title="Drawn">Placa do Caminhão</abbr></th>
-          <th><abbr title="Lost">Opção</abbr></th>
+          <th>Cidade de Origem</th>
+          <th>Cidade de Destino</th>
+          <th>Placa do Caminhão</th>
+          <th>Opção</th>
         </tr>
         </thead>
         <tfoot>
-        <tr>
-          <th><abbr title="Position">Data</abbr></th>
+        <tr class="is-selected">
+          <th>Data</th>
           <th>Status do Frete</th>
-          <th><abbr title="Played">Cidade de Origem</abbr></th>
-          <th><abbr title="Won">Cidade de Destino</abbr></th>
-          <th><abbr title="Drawn">Placa do Caminhão</abbr></th>
-          <th><abbr title="Lost">Opção</abbr></th>
+          <th>Cidade de Origem</th>
+          <th>Cidade de Destino</th>
+          <th>Placa do Caminhão</th>
+          <th>Opção</th>
         </tr>
         </tfoot>
         <tbody>
         <tr>
           <th>11/11/2222</th>
-          <td><a href="#" title="Leicester City F.C.">Em Transporte</a> <strong>(C)</strong>
+          <td><a href="#" title="Leicester City F.C.">Em Transporte</a>
           </td>
           <td>Fod do Iguaçu</td>
           <td>Toledo</td>
           <td>BEW5E07</td>
-          <td>#</td>
+          <td>
+            <font-awesome-icon icon="fa-solid fa-pen-to-square" /> |
+            <font-awesome-icon icon="fa-solid fa-trash" />
+          </td>
         </tr>
         <tr>
           <th>11/11/2222</th>
-          <td><a href="#" title="Leicester City F.C.">Em Transporte</a> <strong>(C)</strong>
+          <td><a href="#" title="Leicester City F.C.">Em Transporte</a>
           </td>
           <td>Fod do Iguaçu</td>
           <td>Toledo</td>
           <td>BEW5E07</td>
-          <td>#</td>
+          <td>
+            <font-awesome-icon icon="fa-solid fa-pen-to-square" /> |
+            <font-awesome-icon icon="fa-solid fa-trash" /></td>
         </tr>
         <tr>
           <th>11/11/2222</th>
-          <td><a href="#" title="Leicester City F.C.">Em Transporte</a> <strong>(C)</strong>
+          <td><a href="#" title="Leicester City F.C.">Em Transporte</a>
           </td>
           <td>Fod do Iguaçu</td>
           <td>Toledo</td>
           <td>BEW5E07</td>
-          <td>#</td>
-        </tr>
-        <tr>
-          <th>11/11/2222</th>
-          <td><a href="#" title="Leicester City F.C.">Em Transporte</a> <strong>(C)</strong>
+          <td>
+            <font-awesome-icon icon="fa-solid fa-pen-to-square" /> |
+            <font-awesome-icon icon="fa-solid fa-trash" />
           </td>
-          <td>Fod do Iguaçu</td>
-          <td>Toledo</td>
-          <td>BEW5E07</td>
-          <td>#</td>
-        </tr>
-        <tr>
-          <th>11/11/2222</th>
-          <td><a href="#" title="Leicester City F.C.">Em Transporte</a> <strong>(C)</strong>
-          </td>
-          <td>Fod do Iguaçu</td>
-          <td>Toledo</td>
-          <td>BEW5E07</td>
-          <td>#</td>
-        </tr>
-        <tr>
-          <th>11/11/2222</th>
-          <td><a href="#" title="Leicester City F.C.">Em Transporte</a> <strong>(C)</strong>
-          </td>
-          <td>Fod do Iguaçu</td>
-          <td>Toledo</td>
-          <td>BEW5E07</td>
-          <td>#</td>
-        </tr>
-        <tr>
-          <th>11/11/2222</th>
-          <td><a href="#" title="Leicester City F.C.">Em Transporte</a> <strong>(C)</strong>
-          </td>
-          <td>Fod do Iguaçu</td>
-          <td>Toledo</td>
-          <td>BEW5E07</td>
-          <td>#</td>
-        </tr>
-        <tr>
-          <th>11/11/2222</th>
-          <td><a href="#" title="Leicester City F.C.">Em Transporte</a> <strong>(C)</strong>
-          </td>
-          <td>Fod do Iguaçu</td>
-          <td>Toledo</td>
-          <td>BEW5E07</td>
-          <td>#</td>
-        </tr>
-        <tr>
-          <th>11/11/2222</th>
-          <td><a href="#" title="Leicester City F.C.">Em Transporte</a> <strong>(C)</strong>
-          </td>
-          <td>Fod do Iguaçu</td>
-          <td>Toledo</td>
-          <td>BEW5E07</td>
-          <td>#</td>
-        </tr>
-        <tr>
-          <th>11/11/2222</th>
-          <td><a href="#" title="Leicester City F.C.">Em Transporte</a> <strong>(C)</strong>
-          </td>
-          <td>Fod do Iguaçu</td>
-          <td>Toledo</td>
-          <td>BEW5E07</td>
-          <td>#</td>
-        </tr>
-        <tr>
-          <th>11/11/2222</th>
-          <td><a href="#" title="Leicester City F.C.">Em Transporte</a> <strong>(C)</strong>
-          </td>
-          <td>Fod do Iguaçu</td>
-          <td>Toledo</td>
-          <td>BEW5E07</td>
-          <td>#</td>
-        </tr>
-        <tr>
-          <th>11/11/2222</th>
-          <td><a href="#" title="Leicester City F.C.">Em Transporte</a> <strong>(C)</strong>
-          </td>
-          <td>Fod do Iguaçu</td>
-          <td>Toledo</td>
-          <td>BEW5E07</td>
-          <td>#</td>
-        </tr>
-        <tr>
-          <th>11/11/2222</th>
-          <td><a href="#" title="Leicester City F.C.">Em Transporte</a> <strong>(C)</strong>
-          </td>
-          <td>Fod do Iguaçu</td>
-          <td>Toledo</td>
-          <td>BEW5E07</td>
-          <td>#</td>
-        </tr>
-        <tr>
-          <th>11/11/2222</th>
-          <td><a href="#" title="Leicester City F.C.">Em Transporte</a> <strong>(C)</strong>
-          </td>
-          <td>Fod do Iguaçu</td>
-          <td>Toledo</td>
-          <td>BEW5E07</td>
-          <td>#</td>
-        </tr>
-        <tr>
-          <th>11/11/2222</th>
-          <td><a href="#" title="Leicester City F.C.">Em Transporte</a> <strong>(C)</strong>
-          </td>
-          <td>Fod do Iguaçu</td>
-          <td>Toledo</td>
-          <td>BEW5E07</td>
-          <td>#</td>
-        </tr>
-        <tr>
-          <th>11/11/2222</th>
-          <td><a href="#" title="Leicester City F.C.">Em Transporte</a> <strong>(C)</strong>
-          </td>
-          <td>Fod do Iguaçu</td>
-          <td>Toledo</td>
-          <td>BEW5E07</td>
-          <td>#</td>
         </tr>
         </tbody>
       </table>
     </div>
-
   </columns>
 
 </template>
@@ -191,10 +81,16 @@
 import {Component, Vue} from "vue-property-decorator";
 @Component
 export default class FreteListView extends Vue{
-
 }
+
 </script>
 
 <style scoped>
 
+  .tabela{
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
 </style>

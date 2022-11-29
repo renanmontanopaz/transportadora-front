@@ -22,6 +22,11 @@ const routes: Array<RouteConfig> = [
     path: '/frete',
     name: 'Frete-List',
     component: () => import('../views/frete/FreteListView.vue')
+  },
+  {
+    path: '/cadastrar-frete',
+    name: 'Cadastro-Frete',
+    component: () => import('../views/frete/CadastroFreteView.vue')
   }
 ]
 
