@@ -1,5 +1,6 @@
 <template>
 
+
   <columns>
     <div class="column">
       <h1 class="title">Cadastrar Frete</h1>
@@ -81,7 +82,7 @@ export default class CadastroFreteView extends Vue{
     max-width: 427px;
     width: 60%;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+    top: 70%;
+    transform: translate(-50%,-70%);
   }
 </style>

@@ -35,34 +35,11 @@
         </tr>
         </tfoot>
         <tbody>
-        <tr>
-          <th>11/11/2222</th>
+        <tr v-for="item in freteList" :key="item.id">
+          <th>{{item.id}}</th>
           <td><a href="#" title="Leicester City F.C.">Em Transporte</a>
           </td>
-          <td>Fod do Iguaçu</td>
-          <td>Toledo</td>
-          <td>BEW5E07</td>
-          <td>
-            <font-awesome-icon icon="fa-solid fa-pen-to-square" /> |
-            <font-awesome-icon icon="fa-solid fa-trash" />
-          </td>
-        </tr>
-        <tr>
-          <th>11/11/2222</th>
-          <td><a href="#" title="Leicester City F.C.">Em Transporte</a>
-          </td>
-          <td>Fod do Iguaçu</td>
-          <td>Toledo</td>
-          <td>BEW5E07</td>
-          <td>
-            <font-awesome-icon icon="fa-solid fa-pen-to-square" /> |
-            <font-awesome-icon icon="fa-solid fa-trash" /></td>
-        </tr>
-        <tr>
-          <th>11/11/2222</th>
-          <td><a href="#" title="Leicester City F.C.">Em Transporte</a>
-          </td>
-          <td>Fod do Iguaçu</td>
+          <td>Foz do Iguaçu</td>
           <td>Toledo</td>
           <td>BEW5E07</td>
           <td>
@@ -75,13 +52,34 @@
     </div>
   </columns>
 
+  <!--<font-awesome-icon icon="fa-solid fa-pen-to-square" /> |
+  <font-awesome-icon icon="fa-solid fa-trash" />-->
 </template>
 
 <script lang="ts">
-import {Component, Vue} from "vue-property-decorator";
-@Component
-export default class FreteListView extends Vue{
-}
+  import {Component, Vue} from "vue-property-decorator";
+  import {FreteClient} from "@/client/Frete.client";
+  import {Frete} from "@/model/Frete";
+  @Component
+  export default class FreteListView extends Vue{
+    private freteClient: FreteClient = new FreteClient()
+    private freteList: Frete[] = []
+
+    public mounted(): void{
+      this.listarFretes()
+    }
+
+    private listarFretes(): void {
+      this.freteClient.findAll().then(
+          success => {
+            this.freteList = success
+          },
+          error =>{
+            console.log(error)
+          }
+      )
+  }
+  }
 
 </script>
 
