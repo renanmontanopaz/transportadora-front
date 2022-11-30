@@ -6,7 +6,7 @@ export class HistoricoFreteClient {
 
     constructor() {
         this.axiosClient = axios.create({
-            baseURL: 'http://localhost:8080/api/historicoFrete',
+            baseURL: 'http://localhost:8081/api/historicoFrete',
             headers: {
                 'Content-type' : 'aplication/json'
             }

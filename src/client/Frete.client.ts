@@ -6,7 +6,7 @@ export class FreteClient {
 
     constructor() {
         this.axiosClient = axios.create({
-            baseURL: 'http://localhost:8080/api/frete',
+            baseURL: 'http://localhost:8081/api/frete',
             headers: {
                 'Content-type' : 'aplication/json'
             }

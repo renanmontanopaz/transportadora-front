@@ -56,7 +56,7 @@
 
       <div class="field is-grouped">
         <div class="control">
-          <button class="button is-success">Cadastrar</button>
+          <button class="button is-success" style="background-color: #00D1B2; font-weight: bold">Cadastrar</button>
         </div>
         <div class="control">
           <button class="button is-link is-light"><router-link to="/frete">Voltar</router-link></button>

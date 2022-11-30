@@ -6,7 +6,7 @@ export class DespesaClient {
 
     constructor() {
         this.axiosClient = axios.create({
-            baseURL: 'http://localhost:8080/api/despesa',
+            baseURL: 'http://localhost:8081/api/despesa',
             headers: {
                 'Content-type' : 'aplication/json'
             }
