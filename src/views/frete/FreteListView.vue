@@ -23,11 +23,12 @@
           <th>Placa do Caminhão</th>
           <th>Produto</th>
           <th>Status do Frete</th>
+          <th>Opções</th>
         </tr>
         </thead>
         <tbody>
         <tr v-for="item in freteList" :key="item.id">
-          <th>{{item.cadastrar[2]}}/{{item.cadastrar[1]}}/{{item.cadastrar[0]}}</th>
+          <th>{{item.cadastrar}}</th>
           <td> {{item.statusFrete}}</td>
           <td>{{item.cidadeOrigem.nome}}</td>
           <td>{{item.cidadeDestino.nome}}</td>
@@ -37,6 +38,11 @@
             {{item.statusFrete}}
             <!-- <font-awesome-icon icon="fa-solid fa-pen-to-square" /> |
             <font-awesome-icon icon="fa-solid fa-trash" /> -->
+          </td>
+          <td>
+
+            <font-awesome-icon icon="fa-solid fa-pen-to-square" /> |
+            <font-awesome-icon icon="fa-solid fa-trash" />
           </td>
         </tr>
         </tbody>
