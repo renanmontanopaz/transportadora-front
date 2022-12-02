@@ -22,27 +22,51 @@
           <th>Cidade de Destino</th>
           <th>Placa do Caminhão</th>
           <th>Produto</th>
-          <th>Status do Frete</th>
           <th>Opções</th>
         </tr>
         </thead>
         <tbody>
         <tr v-for="item in freteList" :key="item.id">
-          <th>{{item.cadastrar}}</th>
-          <td> {{item.statusFrete}}</td>
+          <th>{{item.cadastrar}}
+
+          </th>
+          <td>
+            <span v-if="item.statusFrete === 'CARGA'" class="tag is-info"> Em carga </span>
+            <span v-if="item.statusFrete === 'EM_TRANSPORTE'" class="tag is-info"> Em transporte </span>
+            <span v-if="item.statusFrete === 'INTERROMPIDO'" class="tag is-warning"> Interrompido </span>
+            <span v-if="item.statusFrete === 'DESCARGA'" class="tag is-primary"> Descarga </span>
+            <span v-if="item.statusFrete === 'FATURADO'" class="tag is-success"> Faturado </span>
+            <span v-if="item.statusFrete === 'CANCELADO'" class="tag is-danger"> Cancelado </span>
+          </td>
           <td>{{item.cidadeOrigem.nome}}</td>
           <td>{{item.cidadeDestino.nome}}</td>
           <td>{{item.caminhao.placa}}</td>
           <td>{{item.produto.nome}}</td>
           <td>
-            {{item.statusFrete}}
-            <!-- <font-awesome-icon icon="fa-solid fa-pen-to-square" /> |
-            <font-awesome-icon icon="fa-solid fa-trash" /> -->
-          </td>
-          <td>
-
-            <font-awesome-icon icon="fa-solid fa-pen-to-square" /> |
-            <font-awesome-icon icon="fa-solid fa-trash" />
+            <div v-if="item.statusFrete === 'CARGA'">
+              <button class="button is-small is-default">T</button>
+              <button class="button is-small is-default">I</button>
+              <button class="button is-small is-default">C</button>
+            </div>
+            <div v-if="item.statusFrete === 'EM_TRANSPORTE'">
+              <button class="button is-small is-default">I</button>
+              <button class="button is-small is-default">D</button>
+            </div>
+            <div v-if="item.statusFrete === 'IMTERROMPIDO'">
+              <button class="button is-small is-default">CR</button>
+              <button class="button is-small is-default">T</button>
+              <button class="button is-small is-default">C</button>
+            </div>
+            <div v-if="item.statusFrete === 'DESCARGA'">
+              <button class="button is-small is-default">F</button>
+            </div>
+            <div v-if="item.statusFrete === 'FATURADO'">
+              Sem ação
+            </div>
+            <div v-if="item.statusFrete === 'CANCELADO'">
+              <button class="button is-small is-default">I</button>
+              <button class="button is-small is-default">C</button>
+            </div>
           </td>
         </tr>
         </tbody>
