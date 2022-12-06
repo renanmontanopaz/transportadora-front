@@ -50,7 +50,7 @@
             </div>
             <div v-if="item.statusFrete === 'EM_TRANSPORTE'">
               <button class="button is-small is-default">I</button>
-              <button class="button is-small is-default">D</button>
+              <button v-on:click="onClickAlterar({number : item.id})" class="button is-small is-default">D</button>
             </div>
             <div v-if="item.statusFrete === 'IMTERROMPIDO'">
               <button class="button is-small is-default">CR</button>
@@ -104,6 +104,15 @@
       )
     }
 
+    public onClickAlterar({number}: { number: any }) {
+
+      this.freteClient.atualizarStatusFaturado(number).then(
+          success =>{
+
+            console.log('atualizado')
+          }
+      )
+    }
   }
 
 </script>

@@ -8,7 +8,7 @@ export class FreteClient {
         this.axiosClient = axios.create({
             baseURL: 'http://localhost:8081/api/frete',
             headers: {
-                'Content-type' : 'aplication/json'
+                'Content-type' : 'application/json'
             }
         })
     }
@@ -34,7 +34,7 @@ export class FreteClient {
 
     public async cadastrar(frete: Frete) : Promise<void> {
         try {
-            return (await this.axiosClient.post(``, frete)).data
+            return (await this.axiosClient.post(``, frete))
         }
         catch(error:any) {
             return Promise.reject(error.response)

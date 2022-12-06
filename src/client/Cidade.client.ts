@@ -59,9 +59,9 @@ export class CidadeClient {
         }
     }
 
-    public async findByEstado(idEstado: number) : Promise<Cidade> {
+    public async findByEstado(idEstado: number) : Promise<Cidade[]> {
         try {
-            return (await this.axiosClient.get<Cidade>(`/${idEstado}`)).data
+            return (await this.axiosClient.get<Cidade[]>(`/estado/${idEstado}`)).data
         }
         catch(error:any) {
             return Promise.reject(error.response)

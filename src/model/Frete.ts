@@ -23,4 +23,12 @@ export class Frete extends AbstractEntity {
     precoTonelada!: number
     observacao!: string
 
+    constructor() {
+        super();
+        this.cidadeOrigem = new Cidade()
+        this.cidadeDestino = new Cidade()
+        this.produto = new Produto()
+        this.caminhao = new Caminhao()
+        this.motorista = new Usuario()
+    }
 }
