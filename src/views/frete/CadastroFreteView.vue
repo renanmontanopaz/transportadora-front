@@ -6,75 +6,84 @@
       <h1 class="title">Cadastrar Frete</h1>
     </div>
     <div class="container">
-      <div class="column is-offset-4 is-4 field is-grouped">
+      <div class="column is-offset-3 is-6 field is-grouped">
         <div class="column is-fullwidth">
           <label class="label">Estado de Origem</label>
           <div class="select is-fullwidth">
-            <select @change="myFunction()"  id="estado" name="estadoO" type="text">
-              <option name="estado0" selected="" disabled="" hidden></option>
-              <option name="estadoO" :value="item.id" v-for="item in estadosList" :key="item.id">{{item.estado}}</option> -->
+            <select @change="myFunction()"  id="estado" type="text">
+              <option selected="" disabled="" hidden></option>
+              <option  :value="item.id" v-for="item in estadosList" :key="item.id">{{item.estado}}</option> -->
             </select>
           </div>
         </div>
         <div class="column is-fullwidth">
           <label class="label">Cidade de Origem</label>
           <div class="select is-fullwidth">
-            <select name="produto" type="text" v-model="frete.cidadeOrigem">
-              <option name="produto" :value="item.id"  v-for="item in cidadeEstadoList" >{{item.nome}}</option>
+            <select  type="text" v-model="frete.cidadeOrigem">
+              <option :value="item"  v-for="item in cidadeEstadoList" >{{item.nome}}</option>
             </select>
           </div>
         </div>
       </div>
-      <div class="column is-offset-4 is-4 field is-grouped">
+      <div class="column is-offset-3 is-6 field is-grouped">
         <div class="column is-fullwidth">
           <label class="label">Estado de Destino</label>
           <div class="select is-fullwidth">
-            <select @change="myFunctionDois()"  id="estado02" name="estadoO2" type="text">
-              <option name="estado02" selected="" disabled="" hidden></option>
-              <option   name="estadoO2" :value="item.id" v-for="item in estadosList" :key="item.id">{{item.estado}}</option> -->
+            <select @change="myFunctionDois()"  id="estado02" type="text">
+              <option selected="" disabled="" hidden></option>
+              <option  :value="item.id" v-for="item in estadosList" :key="item.id">{{item.estado}}</option> -->
             </select>
           </div>
         </div>
         <div class="column is-fullwidth">
           <label class="label">Cidade de Destino</label>
           <div class="select is-fullwidth">
-            <select name="produto" type="text" v-model="frete.cidadeDestino">
-              <option name="produto" :value="item.id"  v-for="item in cidadeEstadoList2" >{{item.nome}}</option>
+            <select type="text" value="" v-model="frete.cidadeDestino">
+              <option :value="item"  v-for="item in cidadeEstadoList2" :key="item.id">{{item.nome}} </option>
             </select>
           </div>
         </div>
       </div>
-      <div class="column is-offset-4 is-4 field is-grouped">
+      <div class="column is-offset-3 is-6 field is-grouped">
         <div class="column is-fullwidth">
           <label class="label">Caminhão</label>
           <div class="select is-fullwidth">
-            <select name="produto" type="text" v-model="frete.caminhao">
-              <option name="produto" :value="item" v-for="item in caminhaoList" :key="item.id">{{item.modelo.nome}}</option>
+            <select type="text" v-model="frete.caminhao">
+              <option :value="item" v-for="item in caminhaoList" :key="item.id">{{item.placa}}</option>
             </select>
           </div>
         </div>
         <div class="column is-fullwidth">
           <label class="label">Motorista</label>
           <div class="select is-fullwidth">
-            <select name="produto" type="text" v-model="frete.motorista">
-              <option name="produto" :value="item" v-for="item in motoristaList" :key="item.id">{{item.nome}}</option>
+            <select type="text" v-model="frete.motorista">
+              <option :value="item" v-for="item in motoristaList" :key="item.id">{{item.nome}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="column is-offset-3 is-6 field is-grouped">
+        <div class="column is-fullwidth">
+          <label class="label">Preço por Tonelada</label>
+          <div class="control">
+            <input class="input" type="text" v-model="frete.precoTonelada" placeholder="Text input">
+          </div>
+        </div>
+        <div class="column is-fullwidth">
+          <label class="label">Produto</label>
+          <div class="select is-fullwidth">
+            <select type="text" v-model="frete.produto">
+              <option :value="item"  v-for="item in produtoList" >{{item.nome}}</option>
             </select>
           </div>
         </div>
       </div>
 
-      <div class="column is-offset-4 is-4">
-        <label class="label">Preço por Tonelada</label>
+
+
+      <div class="column is-offset-3 is-6 field is-grouped">
         <div class="control">
-          <input class="input" type="text" v-model="frete.precoTonelada" placeholder="Text input">
-        </div>
-      </div>
-
-
-
-      <div class="field is-grouped column is-offset-5 is-5">
-        <div class="control">
-          <button type="submit" class="button is-link" style="background-color: #00D1B2; font-weight: bold" v-on:click="onClickCadastrar()">Cadastrar</button>
+          <button class="button is-link" style="background-color: #00D1B2; font-weight: bold" @click="onClickCadastrar()">Cadastrar</button>
         </div>
         <div class="control">
           <button class="button is-link is-light"><router-link to="/frete">Voltar</router-link></button>

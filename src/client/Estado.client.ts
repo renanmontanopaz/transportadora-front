@@ -8,7 +8,7 @@ export class EstadoClient {
         this.axiosClient = axios.create({
             baseURL: 'http://localhost:8081/api/estado',
             headers: {
-                'Content-type' : 'aplication/json'
+                'Content-type' : 'application/json'
             }
         })
     }

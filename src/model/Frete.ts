@@ -17,18 +17,20 @@ export class Frete extends AbstractEntity {
     quilometragemFim!: number
     totalBrutoRecebidoNota!: number
     totalLiquidoRecebido!: number
-    pesoInicial!: number
-    pesoFinal!: number
+    pesoInicial!: Date
+    pesoFinal!: Date
     pesoFinalTransportado!: number
+    dataInicio!: Date
+    dataFim!: Date
     precoTonelada!: number
     observacao!: string
 
-    constructor() {
+    /*constructor() {
         super();
         this.cidadeOrigem = new Cidade()
         this.cidadeDestino = new Cidade()
         this.produto = new Produto()
         this.caminhao = new Caminhao()
         this.motorista = new Usuario()
-    }
+    }*/
 }

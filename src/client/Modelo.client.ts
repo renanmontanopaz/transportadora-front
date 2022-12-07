@@ -8,7 +8,7 @@ export class ModeloClient {
         this.axiosClient = axios.create({
             baseURL: 'http://localhost:8081/api/modelo',
             headers: {
-                'Content-type' : 'aplication/json'
+                'Content-type' : 'application/json'
             }
         })
     }

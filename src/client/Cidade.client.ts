@@ -8,7 +8,7 @@ export class CidadeClient {
         this.axiosClient = axios.create({
             baseURL: 'http://localhost:8081/api/cidade',
             headers: {
-                'Content-type' : 'aplication/json'
+                'Content-type' : 'application/json'
             }
         })
     }

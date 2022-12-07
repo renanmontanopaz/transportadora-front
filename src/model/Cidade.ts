@@ -6,9 +6,9 @@ export class Cidade extends AbstractEntity {
     nome!: string
     estado!: Estado
 
-   /* constructor() {
+    constructor() {
         super();
         this.estado = new Estado()
 
-    }*/
+    }
 }

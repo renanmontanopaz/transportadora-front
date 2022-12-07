@@ -8,7 +8,7 @@ export class MarcaClient {
         this.axiosClient = axios.create({
             baseURL: 'http://localhost:8081/api/marca',
             headers: {
-                'Content-type' : 'aplication/json'
+                'Content-type' : 'application/json'
             }
         })
     }

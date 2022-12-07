@@ -2,9 +2,10 @@
   <columns>
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="column is-four-fifths">
-        <a class="navbar-item is-four-fifths" href="#">
+        <a class="navbar-item is-5" href="#">
           <h1 class="title">Lista de Frete</h1>
         </a>
+
 
       </div>
       <div class="column">
@@ -12,11 +13,22 @@
       </div>
     </nav>
 
+    <div class="control has-icons-left has-icons-right column is-offset-4 is-4 field">
+      <input class="input" type="email" placeholder="Email">
+      <span class="icon is-medium is-left">
+    <i class="fas fa-envelope"></i>
+  </span>
+      <span class="icon is-medium is-right">
+    <i class="fas fa-check"></i>
+  </span>
+    </div>
     <div class="tabela">
+
       <table class="table is-bordered is-striped is-narrow is-hoverable">
         <thead class="blue">
         <tr style="background: hsl(171deg, 100%, 41%)">
-          <th>Data</th>
+          <th>ID do Frete</th>
+          <th>Data &nbsp; &nbsp; &nbsp;|&nbsp; &nbsp; &nbsp; Hora</th>
           <th>Status do Frete</th>
           <th>Cidade de Origem</th>
           <th>Cidade de Destino</th>
@@ -27,6 +39,7 @@
         </thead>
         <tbody>
         <tr v-for="item in freteList" :key="item.id">
+          <td>{{item.id}}</td>
           <th>{{item.cadastrar}}
 
           </th>
