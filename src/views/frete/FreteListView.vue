@@ -14,7 +14,7 @@
     </nav>
 
     <div class="control has-icons-left has-icons-right column is-offset-4 is-4 field">
-      <input class="input" type="email" placeholder="Email">
+      <input class="input" type="email" placeholder="">
       <span class="icon is-medium is-left">
     <i class="fas fa-envelope"></i>
   </span>
@@ -57,7 +57,7 @@
           <td>{{item.produto.nome}}</td>
           <td>
             <div v-if="item.statusFrete === 'CARGA'">
-              <button class="button is-small is-default">T</button>
+              <router-link to="/em-transporte" ><button class="button is-small is-default">T</button></router-link>
               <button class="button is-small is-default">I</button>
               <button class="button is-small is-default">C</button>
             </div>
