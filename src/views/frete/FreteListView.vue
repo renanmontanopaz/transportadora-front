@@ -1,5 +1,5 @@
 <template>
-  <columns>
+  <div name="coluna">
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="column is-four-fifths">
         <a class="navbar-item is-5" href="#">
@@ -13,14 +13,19 @@
       </div>
     </nav>
 
-    <div class="control has-icons-left has-icons-right column is-offset-4 is-4 field">
-      <input class="input" type="email" placeholder="">
+    <div class="control has-icons-left has-icons-right column is-offset-4 is-4 field is-grouped">
+      <input class="input" type="text" v-model="idbusca" placeholder="Pesquise frete por ID">
       <span class="icon is-medium is-left">
     <i class="fas fa-envelope"></i>
+
   </span>
       <span class="icon is-medium is-right">
     <i class="fas fa-check"></i>
+
   </span>
+      <div class="control">
+        <button @click="BuscarFrete()" class="button is-link" style="background-color: #00D1B2; font-weight: bold">Pesquisar</button>
+      </div>
     </div>
     <div class="tabela">
 
@@ -57,18 +62,18 @@
           <td>{{item.produto.nome}}</td>
           <td>
             <div v-if="item.statusFrete === 'CARGA'">
-              <router-link to="/em-transporte" ><button class="button is-small is-default">T</button></router-link>
-              <button class="button is-small is-default">I</button>
-              <button class="button is-small is-default">C</button>
+              <button @click="onClickAlterar(item.id)" class="button is-small is-default">T</button>
+              <button @click="onClickAlterarInt(item.id)" class="button is-small is-default">I</button>
+              <button @click="onClickAlterarCanc(item.id)" class="button is-small is-default">C</button>
             </div>
             <div v-if="item.statusFrete === 'EM_TRANSPORTE'">
-              <button class="button is-small is-default">I</button>
-              <button v-on:click="onClickAlterar({number : item.id})" class="button is-small is-default">D</button>
+              <button @click="onClickAlterarInt(item.id)" class="button is-small is-default">I</button>
+              <button @click="onClickAlterar(item.id)" class="button is-small is-default">D</button>
             </div>
             <div v-if="item.statusFrete === 'IMTERROMPIDO'">
               <button class="button is-small is-default">CR</button>
-              <button class="button is-small is-default">T</button>
-              <button class="button is-small is-default">C</button>
+              <button @click="onClickAlterar(item.id)" class="button is-small is-default">T</button>
+              <button @click="onClickAlterarCanc(item.id)" class="button is-small is-default">C</button>
             </div>
             <div v-if="item.statusFrete === 'DESCARGA'">
               <button class="button is-small is-default">F</button>
@@ -77,15 +82,14 @@
               Sem ação
             </div>
             <div v-if="item.statusFrete === 'CANCELADO'">
-              <button class="button is-small is-default">I</button>
-              <button class="button is-small is-default">C</button>
+              <button @click="onClickAlterarInt(item.id)" class="button is-small is-default">I</button>
             </div>
           </td>
         </tr>
         </tbody>
       </table>
     </div>
-  </columns>
+  </div>
 
   <!--<font-awesome-icon icon="fa-solid fa-pen-to-square" /> |
   <font-awesome-icon icon="fa-solid fa-trash" />-->
@@ -95,12 +99,16 @@
   import {Component, Vue} from "vue-property-decorator";
   import {FreteClient} from "@/client/Frete.client";
   import {Frete} from "@/model/Frete";
+  import router from "@/router";
 
 
   @Component
   export default class FreteListView extends Vue{
     private freteClient: FreteClient = new FreteClient()
     private freteList: Frete[] = []
+    public frete: Frete = new Frete()
+    public fretebusca: Frete = new Frete()
+    private idbusca = Number(null)
 
     public mounted(): void{
       this.listarFretes()
@@ -117,15 +125,41 @@
       )
     }
 
-    public onClickAlterar({number}: { number: any }) {
-
-      this.freteClient.atualizarStatusFaturado(number).then(
-          success =>{
-
-            console.log('atualizado')
+    private BuscarFrete(): void{
+      this.freteClient.findById(this.idbusca).then(
+          success => {
+            this.fretebusca = success
+            console.log(this.fretebusca)
+          },
+          error =>{
+            console.log(error)
           }
       )
     }
+
+    public onClickAlterar(id: number): void{
+      router.push({path: `/em-transporte/${id}`})
+    }
+    public onClickAlterarInt(id: number): void{
+      router.push({path: `/interrompido/${id}`})
+    }
+    public Atualizar(): void{
+      this.freteClient.atualizar(this.frete).then(
+          success =>{
+            this.frete = new Frete()
+            //this.atualizastatus();
+            console.log('Registro atualizado com sucesso')
+          },
+          error =>{
+            console.log(error)
+          }
+      )
+
+    }
+    public onClickAlterarCanc(id: number): void{
+      router.push({path: `/cancelado/${id}`})
+    }
+
   }
 
 </script>

@@ -29,9 +29,19 @@ const routes: Array<RouteConfig> = [
     component: () => import('../views/frete/CadastroFreteView.vue')
   },
   {
-    path: '/em-transporte',
+    path: '/em-transporte/:id',
     name: 'Em-Transporte',
     component: () => import('../views/frete/StatusFreteEmTransporte.vue')
+  },
+  {
+    path: '/interrompido/:id',
+    name: 'interrompido',
+    component: () => import('../views/frete/StatusFreteInterrompido.vue')
+  },
+  {
+    path: '/cancelado/:id',
+    name: 'cancelado',
+    component: () => import('../views/frete/StatusFreteCancelado.vue')
   }
 ]
 

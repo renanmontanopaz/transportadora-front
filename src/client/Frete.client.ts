@@ -41,7 +41,7 @@ export class FreteClient {
         }
     }
     
-    public async atualizar(frete: Frete) : Promise<void> {
+    public async atualizar( frete: Frete) : Promise<void> {
         try {
             return (await this.axiosClient.put(`/${frete.id}`, frete)).data
         }
@@ -50,9 +50,9 @@ export class FreteClient {
         }
     }
 
-    public async atualizarStatusCargaParaEmTransporte(idFrete: number) : Promise<void> {
+    public async atualizarStatusCargaParaEmTransporte( frete: Frete) : Promise<void> {
         try {
-            return (await this.axiosClient.put(`/${idFrete}`)).data
+            return (await this.axiosClient.put(`/${frete.id}`, frete)).data
         }
         catch(error:any) {
             return Promise.reject(error.response)

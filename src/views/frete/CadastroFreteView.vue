@@ -1,7 +1,7 @@
 <template>
 
 
-  <columns>
+  <div>
     <div class="column">
       <h1 class="title">Cadastrar Frete</h1>
     </div>
@@ -90,7 +90,7 @@
         </div>
       </div>
     </div>
-  </columns>
+  </div>
 
 </template>
 
@@ -108,6 +108,7 @@ import {UsuarioClient} from "@/client/Usuario.client";
 import {Usuario} from "@/model/Usuario";
 import {EstadoClient} from "@/client/Estado.client";
 import {Estado} from "@/model/Estado";
+import router from "@/router";
 
 @Component
 export default class CadastroFreteView extends Vue{
@@ -200,6 +201,8 @@ export default class CadastroFreteView extends Vue{
     )
     console.log(this.cidadeEstadoList);
   }
+
+
 }
 </script>
 
